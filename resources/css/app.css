@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface-variant font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, .display-text {
+    @apply font-display text-on-surface font-extrabold;
+  }
+}
+
+@layer components {
+  /* Implementasi Soft Well untuk Input */
+  .input-soft-well {
+    @apply bg-surface-container-high border-none rounded-md px-4 py-3 
+           focus:ring-2 focus:ring-primary/50 focus:bg-white transition-all duration-300;
+  }
+
+  /* Implementasi Card dengan Tonal Partitioning */
+  .card-hero {
+    @apply bg-surface-container-lowest rounded-xl p-6 shadow-ambient;
+  }
+}
