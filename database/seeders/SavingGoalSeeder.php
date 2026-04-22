@@ -12,6 +12,13 @@ class SavingGoalSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $user = \App\Models\User::first();
+
+            $user->savingGoals()->create([
+                'name' => 'Upgrade Laptop Programming',
+                'target_amount' => 15000000,
+                'current_amount' => 2000000,
+                'deadline' => now()->addMonths(10),
+            ]);
     }
 }

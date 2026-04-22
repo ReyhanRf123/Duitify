@@ -43,6 +43,10 @@
                 </div>
             </section>
 
+            <section class="space-y-4">
+                <button><a href="{{ route('transactions.create') }}">Tambah Transaksi</a></button>
+            </section>
+
         </div>
     </div>
 </x-app-layout>

@@ -2,23 +2,14 @@
 
 Duitify adalah aplikasi pengelolaan keuangan pribadi yang dibangun dengan fokus pada kejelasan visual dan efisiensi pencatatan. Proyek ini mengikuti filosofi desain **"The Fiscal Sanctuary"** yang mengedepankan ketenangan dan presisi.
 
-## 🚀 Status Proyek: Milestone 1 - Foundation & Dashboard
-- [x] Inisiasi Project Laravel 11 & Tailwind CSS.
-- [x] Konfigurasi Design System (Custom Colors, Typography Manrope & Inter).
-- [x] Arsitektur Database (User, Accounts, Categories, Saving Goals, Transactions).
-- [x] Database Seeding untuk data dummy yang realistis.
-- [x] UI Dashboard Utama dengan Tonal Partitioning.
+## 🚀 Status Proyek: Milestone 2 - Transaction & Atomic Logic (In Progress)
+- [x] Milestone 1: Foundation & Dashboard UI.
+- [x] Implementasi **Atomic Transaction** (Integrasi saldo otomatis).
+- [x] Fitur **Saving Goals Tracking** (Saldo target bertambah otomatis saat menabung).
+- [x] UI **Soft Well Input** untuk form transaksi premium.
+- [x] Upgrade Environment ke **PHP 8.5** & Laravel 11 Optimization.
 
-## 🛠️ Tech Stack
-- **Backend:** Laravel 11
-- **Frontend:** Tailwind CSS, Blade Templating
-- **Database:** MySQL
-- **Starter Kit:** Laravel Breeze
-
-## 🏁 Cara Menjalankan
-1. Clone repository.
-2. Jalankan `composer install` & `npm install`.
-3. Konfigurasi `.env` dan buat database.
-4. Jalankan `php artisan migrate:fresh --seed` (Penting untuk data awal).
-5. Jalankan `php artisan serve` & `npm run dev`.
-6. Login dengan: `reyhan@duitify.test` / `password`.
+## 🛠️ Fitur Teknis Milestone 2
+- **Data Integrity:** Menggunakan `DB::transaction` untuk memastikan sinkronisasi antara catatan transaksi dan saldo akun.
+- **Dynamic UI:** Form transaksi menggunakan teknik *inward shadow* untuk pengalaman pengguna yang lebih *immersive*.
+- **Security:** Implementasi `auth()->id()` injection untuk mencegah manipulasi data antar pengguna.

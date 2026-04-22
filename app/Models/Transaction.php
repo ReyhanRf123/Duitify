@@ -10,4 +10,6 @@ class Transaction extends Model
 
     public function account() { return $this->belongsTo(Account::class); }
     public function savingGoal() { return $this->belongsTo(SavingGoal::class); }
+    public function user() { return $this->belongsTo(User::class); }
+    public function category() { return $this->belongsTo(Category::class); }
 }

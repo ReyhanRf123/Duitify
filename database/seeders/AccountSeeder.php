@@ -12,6 +12,16 @@ class AccountSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $user = \App\Models\User::first();
+
+            $accounts = [
+                ['name' => 'Bank BCA', 'balance' => 5000000],
+                ['name' => 'Dompet Tunai', 'balance' => 250000],
+                ['name' => 'GoPay/Dana', 'balance' => 1000000],
+            ];
+
+            foreach ($accounts as $account) {
+                $user->accounts()->create($account);
+            }
     }
 }
