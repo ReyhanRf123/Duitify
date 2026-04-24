@@ -1,15 +1,25 @@
-# Duitify - Personal Finance Tracker (The Fiscal Sanctuary)
+# Duitify - Personal Finance Management
 
-Duitify adalah aplikasi pengelolaan keuangan pribadi yang dibangun dengan fokus pada kejelasan visual dan efisiensi pencatatan. Proyek ini mengikuti filosofi desain **"The Fiscal Sanctuary"** yang mengedepankan ketenangan dan presisi.
+Duitify adalah aplikasi pengelolaan keuangan pribadi berbasis web yang dirancang untuk membantu pengguna melacak arus kas, memantau target tabungan, dan menganalisis pengeluaran bulanan.
 
-## 🚀 Status Proyek: Milestone 2 - Transaction & Atomic Logic (In Progress)
-- [x] Milestone 1: Foundation & Dashboard UI.
-- [x] Implementasi **Atomic Transaction** (Integrasi saldo otomatis).
-- [x] Fitur **Saving Goals Tracking** (Saldo target bertambah otomatis saat menabung).
-- [x] UI **Soft Well Input** untuk form transaksi premium.
-- [x] Upgrade Environment ke **PHP 8.5** & Laravel 11 Optimization.
+## Fitur Utama
+- **Dashboard Intelligence**: Grafik tren pengeluaran 7 hari terakhir dan rasio pengeluaran bulanan.
+- **Transaction Management**: Pencatatan pemasukan dan pengeluaran dengan kategori dinamis.
+- **Saving Goals**: Pelacakan target tabungan dengan progress bar real-time.
+- **Security**: Verifikasi dua langkah (2FA) via email dan Reset Password.
+- **Export Report**: Cetak laporan bulanan ke format PDF.
 
-## 🛠️ Fitur Teknis Milestone 2
-- **Data Integrity:** Menggunakan `DB::transaction` untuk memastikan sinkronisasi antara catatan transaksi dan saldo akun.
-- **Dynamic UI:** Form transaksi menggunakan teknik *inward shadow* untuk pengalaman pengguna yang lebih *immersive*.
-- **Security:** Implementasi `auth()->id()` injection untuk mencegah manipulasi data antar pengguna.
+## Tech Stack
+- **Backend**: Laravel 11 (PHP)
+- **Frontend**: Tailwind CSS, Alpine.js
+- **Database**: MySQL
+- **Library**: Chart.js, DomPDF
+
+## Instalasi
+1. Clone repository: `git clone https://github.com/username/duitify.git`
+2. Install dependencies: `composer install && npm install`
+3. Salin `.env.example` ke `.env` dan atur database.
+4. Generate key: `php artisan key:generate`
+5. Jalankan migrasi: `php artisan migrate`
+6. Jalankan build asset: `npm run build`
+7. Jalankan server: `php artisan serve`

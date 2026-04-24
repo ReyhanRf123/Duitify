@@ -14,6 +14,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
+        <!-- Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -36,4 +40,12 @@
             </main>
         </div>
     </body>
+
+    @if (session('success'))
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)"
+            class="fixed top-5 right-5 z-50 bg-primary text-on-primary px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transition-all">
+            <span class="material-icons-outlined">check_circle</span>
+            <span class="font-bold">{{ session('success') }}</span>
+        </div>
+    @endif
 </html>

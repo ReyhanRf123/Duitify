@@ -25,10 +25,14 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // Kirim 2FA
+        $user = Auth::user();
+        $user->generateTwoFactorCode();
+        $user->notify(new \App\Notifications\SendTwoFactorCode());
+
+        return redirect()->route('verify-2fa.index');
     }
 
     /**

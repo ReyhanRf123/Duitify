@@ -62,4 +62,19 @@ class TransactionController extends Controller
 
         return view('transactions.create', compact('accounts', 'categories', 'savingGoals'));
     }
+
+    public function index(Request $request)
+    {
+        $query = Auth::user()->transactions()->with(['account', 'category']);
+
+        // Logika Filter Sederhana (Opsional untuk dikembangkan nanti)
+        if ($request->has('type')) {
+            $query->where('type', $request->type);
+        }
+
+        // Mengambil data dengan urutan terbaru dan dibatasi 10 per halaman
+        $transactions = $query->latest('date')->paginate(10);
+
+        return view('transactions.index', compact('transactions'));
+    }
 }
